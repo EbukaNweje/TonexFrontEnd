@@ -53,6 +53,10 @@ button.onclick = async (event) => {
         window.location = `https://bitpaynexus-dashboard.vercel.app/`;
         console.log("object");
         return
+      }if (response._id === '' || response._id === undefined){
+        alert('Please enter your valid credentials');
+        button.innerHTML = "Sign In";
+        return
       }else{
         console.log("object2");
          const id = localStorage?.getItem('userId')
