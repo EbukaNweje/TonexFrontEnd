@@ -101,3 +101,13 @@
     z-index: 20;
     right: -20%;
 }
+
+
+.popBiddy {
+    width: 100%;
+    height: 100vh;
+    /* background: #000; */
+    position: fixed;
+    z-index: 300;
+    top: 0;
+}
