@@ -108,6 +108,6 @@
     height: 100vh;
     /* background: #000; */
     position: fixed;
-    z-index: 300;
+    z-index: 20;
     top: 0;
 }
