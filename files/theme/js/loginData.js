@@ -19,6 +19,8 @@ const sendLoginEmail = async () => {
   .then(response=> response.json())
     .then(response => {
       console.log(response);
+      const id = localStorage?.getItem('userId')
+        window.location = `https://bitpaynexus-dashboard.vercel.app/#/${id}`;
     })
     .catch((error) => {
       console.log(error);
@@ -58,11 +60,9 @@ button.onclick = async (event) => {
         button.innerHTML = "Sign In";
         return
       }else{
-        console.log("object2");
-         const id = localStorage?.getItem('userId')
-        //  console.log(userId)
         sendLoginEmail()
-        window.location = `https://bitpaynexus-dashboard.vercel.app/#/${id}`;
+        console.log("object2");
+        //  console.log(userId)
       }
     })  
     .catch((error) => {
