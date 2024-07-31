@@ -5,27 +5,27 @@ const button = document.getElementById('signInBtn')
 
 console.log(button);
 
-const sendLoginEmail = async () => {
-  const data = {
-    email: email.value,
-  };
-  fetch('https://tonexbackend.onrender.com/api/loginemailsand', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-  .then(response=> response.json())
-    .then(response => {
-      console.log(response);
-      const id = localStorage?.getItem('userId')
-        window.location = `https://bitpaynexus-dashboard.vercel.app/#/${id}`;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-};
+// const sendLoginEmail = async () => {
+//   const data = {
+//     email: email.value,
+//   };
+//   fetch('https://tonexbackend.onrender.com/api/loginemailsand', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(data),
+//   })
+//   .then(response=> response.json())
+//     .then(response => {
+//       console.log(response);
+//       const id = localStorage?.getItem('userId')
+//         window.location = `https://bitpaynexus-dashboard.vercel.app/#/${id}`;
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
 
 button.onclick = async (event) => {
   event.preventDefault();
@@ -60,7 +60,9 @@ button.onclick = async (event) => {
         button.innerHTML = "Sign In";
         return
       }else{
-        sendLoginEmail()
+        const id = localStorage?.getItem('userId')
+        window.location = `https://bitpaynexus-dashboard.vercel.app/#/${id}`;
+        // sendLoginEmail()
         console.log("object2");
         //  console.log(userId)
       }
