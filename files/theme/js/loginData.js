@@ -2,6 +2,8 @@
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 const button = document.getElementById('signInBtn')
+const ShowPasswordCheck = document.querySelector('.ShowPassword');
+const PasswordText = document.querySelector('.PasswordText');
 
 console.log(button);
 
@@ -72,3 +74,14 @@ button.onclick = async (event) => {
       button.innerHTML = "Sign In";
     });
 };
+
+
+ShowPasswordCheck.onclick = ()=>{
+  if(ShowPasswordCheck.checked === true){
+    password.type = "text"
+    PasswordText.innerHTML = "Hide Passwoord"
+  }else{
+    password.type = "password"
+    PasswordText.innerHTML = "Show Password"
+  }
+}

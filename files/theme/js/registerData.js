@@ -61,7 +61,6 @@ button.onclick = async (event) => {
       password.type = "password"
       confirmPassword.type = "password"
       PasswordText.innerHTML = "Show Password"
-
     }
 }
 
