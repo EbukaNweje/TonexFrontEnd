@@ -10,6 +10,7 @@ const address = document.getElementById('address');
 const hear = document.getElementById('hear');
 const refer = document.getElementById('refer');
 const button = document.querySelector('.subTinsedit');
+const ShowPasswordCheck = document.querySelector('.ShowPassword');
 
 
 button.onclick = async (event) => {
@@ -22,7 +23,6 @@ button.onclick = async (event) => {
     password: password.value,
     gender: gender.value,
     country: country.value,
-    address: address.value,
   };
 
   console.log(data);
@@ -49,7 +49,14 @@ button.onclick = async (event) => {
       console.log(error);
       button.innerHTML = "Submit";
     });
-
- 
 };
+
+
+ ShowPasswordCheck.onclick = ()=>{
+    if(ShowPasswordCheck.checked === true){
+      password.type = "text"
+    }else{
+      password.type = "password"
+    }
+}
 
